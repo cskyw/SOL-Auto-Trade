@@ -1,4 +1,4 @@
-name: OKX Daily Strategy
+name: SOL Daily Strategy
 
 on:
   schedule:
