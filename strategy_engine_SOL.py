@@ -82,7 +82,7 @@ class StrategyState:
         ma_slow = close.rolling(self.params.ma_slow).mean()
         ma120 = close.rolling(120).mean()
 
-        idx = len(close) - 2
+        idx = len(close) - 1
         price = float(close.iloc[idx])
         prev_price = float(close.iloc[idx - 1])
         last_ma_fast = float(ma_fast.iloc[idx])
