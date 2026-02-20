@@ -17,8 +17,8 @@ def should_stop_loss(entry_price: float, current_price: float, side: str, sl_pct
 
 @dataclass
 class StrategyParams:
-    ma_fast: int = 3
-    ma_slow: int = 5
+    ma_fast: int = 5
+    ma_slow: int = 10
     buy_pct: float = 0.15
     leverage: float = 1.0
     tp1_pct: float = 0.08
@@ -82,7 +82,7 @@ class StrategyState:
         ma_slow = close.rolling(self.params.ma_slow).mean()
         ma120 = close.rolling(120).mean()
 
-        idx = len(close) - 1
+        idx = len(close) - 2
         price = float(close.iloc[idx])
         prev_price = float(close.iloc[idx - 1])
         last_ma_fast = float(ma_fast.iloc[idx])
