@@ -17,8 +17,8 @@ def should_stop_loss(entry_price: float, current_price: float, side: str, sl_pct
 
 @dataclass
 class StrategyParams:
-    ma_fast: int = 5
-    ma_slow: int = 10
+    ma_fast: int = 3
+    ma_slow: int = 5
     buy_pct: float = 0.15
     leverage: float = 1.0
     tp1_pct: float = 0.08
