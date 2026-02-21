@@ -233,7 +233,6 @@ def execute_actions(exchange: ccxt.Exchange, actions: list[dict]) -> list[dict]:
             params["posSide"] = pos_side
         if op.startswith("tp1_") or op.startswith("tp2_") or op.startswith("sl_"):
             params["reduceOnly"] = True
-        params["clOrdId"] = f"sol_{op[:10]}_{int(time.time())}"
         sol_size = sol_size / contract_size
         if sol_size <= 0:
             continue
