@@ -41,7 +41,7 @@ LEVERAGE = 2
 def create_strategy_state() -> StrategyState:
     params = StrategyParams(
         ma_fast=int(os.getenv("MA_FAST", "5")),
-        ma_slow=int(os.getenv("MA_SLOW", "10")),
+        ma_slow=int(os.getenv("MA_SLOW", "7")),
         buy_pct=float(os.getenv("BUY_PCT", "0.15")),
         leverage=float(os.getenv("LEVERAGE", str(LEVERAGE))),
         tp1_pct=float(os.getenv("TP1_PCT", "0.08")),
